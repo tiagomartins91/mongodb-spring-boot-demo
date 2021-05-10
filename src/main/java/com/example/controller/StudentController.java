@@ -4,6 +4,8 @@ import com.example.entity.Student;
 import com.example.service.StudentService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/students")
 public class StudentController {
@@ -12,6 +14,11 @@ public class StudentController {
 
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
+    }
+
+    @GetMapping
+    public List<Student> findAll() {
+        return studentService.getAllStudents();
     }
 
     @PostMapping

@@ -10,7 +10,7 @@ import java.util.List;
 
 @Getter
 @Setter
-@Document(collation = "student")
+@Document(collection = "student")
 public class Student {
 
     @Id
@@ -23,9 +23,19 @@ public class Student {
     @Field(name = "mail")
     private String email;
 
+    @Field(name = "department")
     private Department department;
 
+    @Field(name = "subjects")
     private List<Subject> subjects;
+
+    public void addSubject(Subject subject) {
+        this.subjects.add(subject);
+    }
+
+    public void removeSubject(Subject subject) {
+        this.subjects.remove(subject);
+    }
 
     /* Constructors examples
 
@@ -47,4 +57,6 @@ public class Student {
         this.subjects = subjects;
     }
      */
+
+
 }
