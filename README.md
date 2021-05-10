@@ -1,4 +1,4 @@
-# MongoDB Spring boot demo App
+# MongoDB Spring Boot Demo App
 
 # Characteristics
 
