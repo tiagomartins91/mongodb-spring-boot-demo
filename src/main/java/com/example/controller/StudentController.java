@@ -31,4 +31,14 @@ public class StudentController {
         return studentService.findById(id);
     }
 
+    @PutMapping
+    public Student updateStudent(@RequestBody Student student) {
+        return studentService.saveOrUpdateStudent(student);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public void deleteStudent(@PathVariable("id") String id) {
+        studentService.deleteById(id);
+    }
+
 }
