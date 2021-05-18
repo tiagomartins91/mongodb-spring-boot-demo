@@ -46,4 +46,9 @@ public class StudentController {
         return studentService.getStudentsByName(name);
     }
 
+    @GetMapping(value = "/studentsByNameAndEmail")
+    public List<Student> studentsByNameAndEmail(@RequestParam String name, @RequestParam String email) {
+        return studentService.getStudentsByNameAndEmail(name, email);
+    }
+
 }
