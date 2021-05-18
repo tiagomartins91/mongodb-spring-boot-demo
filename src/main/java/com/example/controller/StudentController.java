@@ -41,4 +41,9 @@ public class StudentController {
         studentService.deleteById(id);
     }
 
+    @GetMapping(value = "/studentsByName/{name}")
+    public List<Student> studentsByName(@PathVariable String name) {
+        return studentService.getStudentsByName(name);
+    }
+
 }
