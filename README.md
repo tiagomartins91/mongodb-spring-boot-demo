@@ -81,3 +81,13 @@ db.student.find(
     }
 )
 ```
+
+## Pagination
+
+Formula: (Page No -1) * Page Size
+
+Page No | Skip | Limit (Page Size)
+ :---:  | :---:| :---: |
+1       | 0    | 10
+2       | 10   | 10 
+3       | 20   | 10
