@@ -36,6 +36,11 @@ public class StudentController {
         return studentService.createStudent(student);
     }
 
+    @PostMapping(value = "withRelations")
+    public Student createStudentWithRelations(@RequestBody Student student) {
+        return studentService.createStudentWithRelations(student);
+    }
+
     @GetMapping(value = "/{id}")
     public Student findById(@PathVariable("id") String id) {
         return studentService.findById(id);
@@ -84,6 +89,11 @@ public class StudentController {
     @GetMapping(value = "/studentsByNameOrEmail")
     public List<Student> studentsByNameOrEmail(@RequestParam String name, @RequestParam String email) {
         return studentService.getStudentsByNameOrEmail(name, email);
+    }
+
+    @GetMapping(value = "/byDepartmentId")
+    public List<Student> byDepartmentId(@RequestParam String deptId) {
+        return studentService.byDepartmentId(deptId);
     }
 
 }

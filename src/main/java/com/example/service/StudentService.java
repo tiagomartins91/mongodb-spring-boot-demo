@@ -1,8 +1,9 @@
 package com.example.service;
 
 import com.example.entity.Student;
+import com.example.repository.DepartmentRepository;
 import com.example.repository.StudentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.repository.SubjectRepository;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -14,10 +15,29 @@ import java.util.Optional;
 @Service
 public class StudentService {
 
-    @Autowired
-    StudentRepository studentRepository;
+    private final StudentRepository studentRepository;
+    private final DepartmentRepository departmentRepository;
+    private final SubjectRepository subjectRepository;
+
+    private StudentService(StudentRepository studentRepository, DepartmentRepository departmentRepository, SubjectRepository subjectRepository) {
+        this.studentRepository = studentRepository;
+        this.departmentRepository = departmentRepository;
+        this.subjectRepository = subjectRepository;
+    }
 
     public Student createStudent(final Student student) {
+        return studentRepository.save(student);
+    }
+
+    public Student createStudentWithRelations(final Student student) {
+        if (student.getDepartment() != null) {
+            departmentRepository.save(student.getDepartment());
+        }
+
+        if (student.getSubjects() != null && !student.getSubjects().isEmpty()) {
+            subjectRepository.saveAll(student.getSubjects());
+        }
+
         return studentRepository.save(student);
     }
 
@@ -78,5 +98,9 @@ public class StudentService {
 
     public List<Student> nameStartsWith(final String name) {
         return studentRepository.findByNameStartsWith(name);
+    }
+
+    public List<Student> byDepartmentId(final String deptId) {
+        return studentRepository.findByDepartmentId(deptId);
     }
 }
