@@ -17,11 +17,11 @@ public class StudentService {
     @Autowired
     StudentRepository studentRepository;
 
-    public Student createStudent(Student student) {
+    public Student createStudent(final Student student) {
         return studentRepository.save(student);
     }
 
-    public Student findById(String id) {
+    public Student findById(final String id) {
         return Optional.of(studentRepository.findById(id))
                 .filter(Optional::isPresent)
                 .map(Optional::get)
@@ -32,23 +32,23 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
-    public Student saveOrUpdateStudent(Student student) {
+    public Student saveOrUpdateStudent(final Student student) {
         return studentRepository.save(student);
     }
 
-    public void deleteById(String id) {
+    public void deleteById(final String id) {
         studentRepository.deleteById(id);
     }
 
-    public List<Student> getStudentsByName(String name) {
+    public List<Student> getStudentsByName(final String name) {
         return studentRepository.findByName(name);
     }
 
-    public List<Student> getStudentsByNameAndEmail(String name, String email) {
+    public List<Student> getStudentsByNameAndEmail(final String name, final String email) {
         return studentRepository.findByNameAndEmail(name, email);
     }
 
-    public List<Student> getStudentsByNameOrEmail(String name, String email) {
+    public List<Student> getStudentsByNameOrEmail(final String name, final String email) {
         return studentRepository.findByNameOrEmail(name, email);
     }
 
@@ -64,7 +64,11 @@ public class StudentService {
         return studentRepository.findAll(sort);
     }
 
-    public List<Student> byDepartmentName(String deptName) {
+    public List<Student> byDepartmentName(final String deptName) {
         return studentRepository.findByDepartmentDepartmentName(deptName);
+    }
+
+    public List<Student> bySubjectName(final String subjectName) {
+        return studentRepository.findBySubjectsSubjectName(subjectName);
     }
 }

@@ -20,33 +20,33 @@ Foreign Key | Sub Document (Reference)
 ## CRUD Operations
 
 * Read document
-
 ```
 { "name" : "Tiago" }
 ```
 
 * AND query
-
 ```
 { $and : [ { "name" : "test" }, { "mail" : "test@gmail.com" } ] }
 ```
 
 * OR query
-
 ```
 { $or : [ { "name" : "Tiago" }, { "mail" : "tiago@gmail.com" } ] }
 ```
 
 * IN query
-
 ```
 { "name" : { $in : [ "Tiago", "Test" ] } }
 ```
 
 * Get documents by sub document field
-
 ```
 { "department.department_name" : "Computer Science" }
+```
+
+* Get documents by array value
+```
+{ "subjects.subject_name" : "Java" }
 ```
 
 * Update document (Shell)

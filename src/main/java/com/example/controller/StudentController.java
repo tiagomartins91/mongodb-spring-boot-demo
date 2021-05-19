@@ -57,8 +57,13 @@ public class StudentController {
     }
 
     @GetMapping(value = "/byDepartmentName/{deptName}")
-    public List<Student> studentsDepartmentName(@PathVariable String deptName) {
+    public List<Student> studentsByDepartmentName(@PathVariable String deptName) {
         return studentService.byDepartmentName(deptName);
+    }
+
+    @GetMapping(value = "/bySubjectName/{subjectName}")
+    public List<Student> studentsBySubjectName(@PathVariable String subjectName) {
+        return studentService.bySubjectName(subjectName);
     }
 
     @GetMapping(value = "/studentsByNameAndEmail")
