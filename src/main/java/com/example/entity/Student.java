@@ -3,6 +3,7 @@ package com.example.entity;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -28,6 +29,9 @@ public class Student {
 
     @Field(name = "subjects")
     private List<Subject> subjects;
+
+    @Transient
+    private double percentage;
 
     public void addSubject(Subject subject) {
         this.subjects.add(subject);
@@ -58,5 +62,16 @@ public class Student {
     }
      */
 
+    public double getPercentage() {
+        if (subjects != null && !subjects.isEmpty()) {
+            int total = 0;
+            for (Subject subject : subjects) {
+                total += subject.getMarksObtained();
+            }
+            return total / subjects.size();
+        }
+
+        return 0.0;
+    }
 
 }
