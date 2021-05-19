@@ -75,4 +75,8 @@ public class StudentService {
     public List<Student> emailLike(final String email) {
         return studentRepository.findByEmailIsLike(email);
     }
+
+    public List<Student> nameStartsWith(final String name) {
+        return studentRepository.findByNameStartsWith(name);
+    }
 }

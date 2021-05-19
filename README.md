@@ -49,9 +49,14 @@ Foreign Key | Sub Document (Reference)
 { "subjects.subject_name" : "Java" }
 ```
 
-* Like query
+* Like Query
 ```
 { "mail" : /gmail/ }
+```
+
+* Start With Query
+```
+{ "name" : /^Tiago/ }
 ```
 
 * Update document (Shell)
