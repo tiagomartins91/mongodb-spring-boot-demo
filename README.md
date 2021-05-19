@@ -43,7 +43,13 @@ Foreign Key | Sub Document (Reference)
 { "name" : { $in : [ "Tiago", "Test" ] } }
 ```
 
-* Update document
+* Get documents by sub document field
+
+```
+{ "department.department_name" : "Computer Science" }
+```
+
+* Update document (Shell)
 
 One document -> update() or updateOne()
 
@@ -62,7 +68,7 @@ db.student.update(
 )
 ```
 
-* Delete document
+* Delete document (Shell)
 
 ```
 db.student.remove(
@@ -72,7 +78,7 @@ db.student.remove(
 )
 ```
 
-* Find query
+* Find query (Shell)
 
 ```
 db.student.find(

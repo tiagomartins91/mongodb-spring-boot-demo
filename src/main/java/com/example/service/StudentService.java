@@ -63,4 +63,8 @@ public class StudentService {
 
         return studentRepository.findAll(sort);
     }
+
+    public List<Student> byDepartmentName(String deptName) {
+        return studentRepository.findByDepartmentDepartmentName(deptName);
+    }
 }
