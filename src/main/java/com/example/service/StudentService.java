@@ -3,6 +3,9 @@ package com.example.service;
 import com.example.entity.Student;
 import com.example.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -47,5 +50,17 @@ public class StudentService {
 
     public List<Student> getStudentsByNameOrEmail(String name, String email) {
         return studentRepository.findByNameOrEmail(name, email);
+    }
+
+    public List<Student> getWithPagination(final int pageNumber, final int pageSize) {
+        Pageable pageable = PageRequest.of(pageNumber - 1, pageSize);
+
+        return studentRepository.findAll(pageable).getContent();
+    }
+
+    public List<Student> allWithSorting() {
+        Sort sort = Sort.by(Sort.Direction.ASC, "name", "email");
+
+        return studentRepository.findAll(sort);
     }
 }

@@ -21,6 +21,16 @@ public class StudentController {
         return studentService.getAllStudents();
     }
 
+    @GetMapping(value = "withPagination")
+    public List<Student> findWithPagination(@RequestParam final int pageNumber, @RequestParam final int pageSize) {
+        return studentService.getWithPagination(pageNumber, pageSize);
+    }
+
+    @GetMapping(value = "allWithSorting")
+    public List<Student> allWithSorting() {
+        return studentService.allWithSorting();
+    }
+
     @PostMapping
     public Student createStudent(@RequestBody Student student) {
         return studentService.createStudent(student);
