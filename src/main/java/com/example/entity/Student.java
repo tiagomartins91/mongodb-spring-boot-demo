@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -24,10 +25,12 @@ public class Student {
     @Field(name = "mail")
     private String email;
 
-    @Field(name = "department")
+    //@Field(name = "department") -> to embedded field
+    @DBRef // reference to separate collection
     private Department department;
 
-    @Field(name = "subjects")
+    //@Field(name = "subjects")
+    @DBRef // reference to separate collection
     private List<Subject> subjects;
 
     @Transient
