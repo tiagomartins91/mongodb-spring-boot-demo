@@ -60,8 +60,12 @@ public class StudentService {
         studentRepository.deleteById(id);
     }
 
-    public List<Student> getStudentsByName(final String name) {
+    public List<Student> findStudentsByName(final String name) {
         return studentRepository.findByName(name);
+    }
+
+    public List<Student> getStudentsByName(final String name) {
+        return studentRepository.getByName(name);
     }
 
     public List<Student> getStudentsByNameAndEmail(final String name, final String email) {
