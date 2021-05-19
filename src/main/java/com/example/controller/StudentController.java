@@ -18,6 +18,7 @@ public class StudentController {
 
     @GetMapping
     public List<Student> findAll() {
+        System.out.println("Find all students!");
         return studentService.getAllStudents();
     }
 
