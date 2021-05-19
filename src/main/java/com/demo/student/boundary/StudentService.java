@@ -1,9 +1,9 @@
-package com.example.service;
+package com.demo.student.boundary;
 
-import com.example.entity.Student;
-import com.example.repository.DepartmentRepository;
-import com.example.repository.StudentRepository;
-import com.example.repository.SubjectRepository;
+import com.demo.student.entity.Student;
+import com.demo.student.control.DepartmentRepository;
+import com.demo.student.control.StudentRepository;
+import com.demo.student.control.SubjectRepository;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

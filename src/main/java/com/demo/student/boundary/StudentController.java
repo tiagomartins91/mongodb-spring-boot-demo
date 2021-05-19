@@ -1,7 +1,6 @@
-package com.example.controller;
+package com.demo.student.boundary;
 
-import com.example.entity.Student;
-import com.example.service.StudentService;
+import com.demo.student.entity.Student;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

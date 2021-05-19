@@ -1,4 +1,4 @@
-package com.example.entity;
+package com.demo.patient.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,14 +8,19 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 @Getter
 @Setter
-@Document(collection = "department")
-public class Department {
+@Document(collection = "patient")
+public class Patient {
 
     @Id
     private String id;
 
-    @Field(name = "department_name")
-    private String departmentName;
+    @Field(name = "name")
+    private String name;
 
-    private String location;
+    @Field(name = "mail")
+    private String email;
+
+    @Field(name = "address")
+    private Address address;
+
 }

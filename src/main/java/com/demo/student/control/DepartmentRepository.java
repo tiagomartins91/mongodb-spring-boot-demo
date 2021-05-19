@@ -1,6 +1,6 @@
-package com.example.repository;
+package com.demo.student.control;
 
-import com.example.entity.Department;
+import com.demo.student.entity.Department;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
