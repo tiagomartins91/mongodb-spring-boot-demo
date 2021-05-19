@@ -49,6 +49,11 @@ Foreign Key | Sub Document (Reference)
 { "subjects.subject_name" : "Java" }
 ```
 
+* Like query
+```
+{ "mail" : /gmail/ }
+```
+
 * Update document (Shell)
 
 One document -> update() or updateOne()
