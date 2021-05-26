@@ -145,3 +145,13 @@ POST - /api/students
     ]
 }
 ```
+
+# Deploy
+
+MongoDB Demo App deployed at Heroku using MongoDB Cloud
+
+## API's
+
+https://spring-mongodb-demo-app.herokuapp.com/api/students
+
+https://spring-mongodb-demo-app.herokuapp.com/api/patients
