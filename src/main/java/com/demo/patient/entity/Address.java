@@ -8,9 +8,12 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @Setter
 public class Address {
 
-    @Field(name = "zipcode")
-    private String zipCode;
+    @Field(name = "locality")
+    private String locality;
 
     @Field(name = "street")
     private String street;
+
+    @Field(name = "zipcode")
+    private String zipCode;
 }

@@ -107,3 +107,41 @@ Page No | Skip | Limit (Page Size)
 1       | 0    | 10
 2       | 10   | 10 
 3       | 20   | 10
+
+# Development
+
+## Collections
+
+* Patient (without relations)
+
+POST - /api/patients
+
+```
+{
+    "name": "Tiago",
+    "email": "tiago@hotmail.com",
+    "address": {
+        "locality": "Canidelo"
+    }
+}
+```
+
+* Student (with relations) 
+
+POST - /api/students
+
+```
+{
+    "name": "Tiago",
+    "email": "Tiago@gmail.com",
+    "department": {
+            "departmentName": "Computer Science"
+    },
+    "subjects": [
+        {
+            "subjectName": "JAVA",
+            "marksObtained": 80
+        }
+    ]
+}
+```

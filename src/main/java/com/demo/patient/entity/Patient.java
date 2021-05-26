@@ -17,7 +17,7 @@ public class Patient {
     @Field(name = "name")
     private String name;
 
-    @Field(name = "mail")
+    @Field(name = "email")
     private String email;
 
     @Field(name = "address")
